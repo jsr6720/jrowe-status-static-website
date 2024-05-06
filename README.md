@@ -1,2 +1,2 @@
-# jrowe-status-static-website
+# jsrowe-status-static-website
 James Rowe status website
