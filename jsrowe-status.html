@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is James Alive?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            color: #2f4f4f;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #4682b4;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+
+        .alive {
+            color: #32cd32;
+            font-weight: bold;
+        }
+
+        .happy-face {
+            font-size: 4em;
+        }
+
+        .meme-button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .meme-button:hover {
+            background-color: #ff1493;
+        }
+
+        .links {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .links a {
+            display: inline-block;
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+            background-color: #4682b4;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .links a:hover {
+            background-color: #2f4f4f;
+        }
+
+        .meme-preview {
+            margin-top: 20px;
+        }
+
+        .powered-by-giphy {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Is James Alive?</h1>
+        <p class="alive">Yes, he is! 😃</p>
+        <div class="happy-face">😊</div>
+
+        <button class="meme-button" onclick="generateGiphy()">Generate a funny meme for James</button>
+
+        <div class="meme-preview" id="meme-preview"></div>
+        <div class="links" id="send-link">
+            <a id="email-link" href="#">Send James the meme</a>
+        </div>
+
+        <div class="powered-by-giphy">
+            <a href="https://giphy.com/" target="_blank">
+                <img src="./Poweredby_100px-White_VertLogo.png" alt="Powered by Giphy">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function generateGiphy() {
+            const giphyApiKey = 'pOJSXfC6lIikbXPV2XrLgawGki830uef'; // beta key - rate limited
+            const giphyApiUrl = `https://api.giphy.com/v1/gifs/random?tag=funny&api_key=${giphyApiKey}`;
+
+            fetch(giphyApiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const gifUrl = data.data.bitly_gif_url;
+                    const previewGif = data.data.images.fixed_height_small.url;
+                    const emailBody = encodeURIComponent(`${gifUrl}`);
+
+                    document.getElementById('send-link').style.display = 'block';
+                    document.getElementById('meme-preview').innerHTML = `<img src="${previewGif}" alt="Random Meme Preview">`;
+                    document.getElementById('email-link').href = `mailto:5853136207@vzwpix.com?subject=A%20Funny%20Meme&body=${emailBody}`;
+                })
+                .catch(error => {
+                    document.getElementById('meme-preview').innerHTML = '<h4>Giphy error</h4>';
+                    console.error("Error fetching GIF from Giphy:", error);
+                });
+        }
+    </script>
+</body>
+</html>
