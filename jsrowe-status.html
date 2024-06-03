@@ -2,11 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Is James Alive?">
+    <meta property="og:description" content="A status page for the Human James Rowe of NY">
+    <meta property="og:image" content="/omt-stduio-square.png">
+    <meta name="author" content="Wiglaf Software">
+    <meta property="og:url" content="https://status.jsrowe.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Is James Alive?</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Helvetica', sans-serif;
             text-align: center;
             background-color: #f0f8ff;
             color: #2f4f4f;
@@ -14,6 +21,10 @@
 
         .container {
             margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
         }
 
         h1 {
@@ -74,17 +85,22 @@
         .powered-by-giphy {
             margin-top: 20px;
         }
+
+        ul li {
+            list-style: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Is James Alive?</h1>
         <p class="alive">Yes, he is! 😃</p>
-        <div class="happy-face">😊</div>
-
-        <button class="meme-button" onclick="generateGiphy()">Generate a funny meme for James</button>
+        <div class="happy-face">🎗️</div>
 
         <div class="meme-preview" id="meme-preview"></div>
+        <div>
+            <button class="meme-button" onclick="generateGiphy()">Generate a funny meme for James</button>
+        </div>
         <div class="links" id="send-link">
             <a id="email-link" href="#">Send James the meme</a>
         </div>
@@ -95,7 +111,17 @@
             </a>
         </div>
 
+        <h2>Maybe I've written something recently</h2>
+
+        <h3><a href="https://github.com/jsr6720/">GitHub</a></h3>
+        <h3><a href="https://twitter.com/jrowe6720">Twitter</a></h3>
+        <h3><a href="https://jsrowe.com">James' Thoughts</a></h3>
+
+        <h2><a href="https://www.linkedin.com/in/jsr6720"><img src="./LI-Logo.png" alt="linkedin logo" /></a></h2>
+
         <h6>Sadly in the venn diagram of people named James with cancer who make websites I have a friend at <a href="https://www.isjamesalive.com">isjamesalive.com</a></h6>
+
+        <h6>Last updated: 2024-06-02 20:40:30 -0400</h6>
     </div>
 
     <script>
