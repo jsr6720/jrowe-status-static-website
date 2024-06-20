@@ -4,125 +4,80 @@
     <meta charset="UTF-8">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Is James Alive?">
+    <meta property="og:title" content="James Rowe Status">
     <meta property="og:description" content="A status page for the Human James Rowe of NY">
-    <meta property="og:image" content="/omt-stduio-square.png">
-    <meta name="author" content="Wiglaf Software">
+    <meta property="og:image" content="/heart.png">
     <meta property="og:url" content="https://status.jsrowe.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Is James Alive?</title>
-    <style>
-        body {
-            font-family: 'Helvetica', sans-serif;
-            text-align: center;
-            background-color: #f0f8ff;
-            color: #2f4f4f;
-        }
-
-        .container {
-            margin-top: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            color: #4682b4;
-        }
-
-        p {
-            font-size: 1.5em;
-        }
-
-        .alive {
-            color: #32cd32;
-            font-weight: bold;
-        }
-
-        .happy-face {
-            font-size: 4em;
-        }
-
-        .meme-button {
-            background-color: #ff69b4;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1em;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        .meme-button:hover {
-            background-color: #ff1493;
-        }
-
-        .links {
-            display: none;
-            margin-top: 20px;
-        }
-
-        .links a {
-            display: inline-block;
-            margin: 0 10px;
-            text-decoration: none;
-            color: white;
-            background-color: #4682b4;
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
-
-        .links a:hover {
-            background-color: #2f4f4f;
-        }
-
-        .meme-preview {
-            margin-top: 20px;
-        }
-
-        .powered-by-giphy {
-            margin-top: 20px;
-        }
-
-        ul li {
-            list-style: none;
-        }
-    </style>
+    <title>James Rowe Status</title>
+    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
-        <h1>Is James Alive?</h1>
-        <p class="alive">Yes, he is! 😃</p>
-        <div class="happy-face">🎗️</div>
+    <header class="header">
+        <nav class="nav">
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="heartbeat-title">
+                <div class="left">
+                    <p><img src="heart.png"></p>
+                </div>
+                <div class="right">
+                    <h1>Is James Alive?</h1>
+                    <p>Yes, he is alive and running! <a href="https://www.lls.org">LLS 🎗️</a></p>
+                </div>
+            </div>
 
-        <div class="meme-preview" id="meme-preview"></div>
-        <div>
-            <button class="meme-button" onclick="generateGiphy()">Generate a funny meme for James</button>
+            <div class="status-bars">
+                <p>Life</p>
+                <div class="status-bar">
+                    <div class="fill"></div>
+                </div>
+                <!-- todo integrate with my <p>Hearing Aids</p> -->
+                <!-- show my last played song on <p>Apple Music</p> -->
+            </div>
+
+            <div class="writings">
+                <h1>Read something I wrote</h1>
+                <p><a href="https://jsrowe.com">James' Thoughts</a></p>
+                <p><a href="https://twitter.com/jrowe6720">X/Twitter</a></p>
+                <p><a href="https://www.linkedin.com/in/jsr6720">LinkedIn</p>
+                <p><a href="https://github.com/jsr6720/">GitHub</a></p>
+            </div>
+
+            <div class="projects">
+                <h1>Upcoming projects</h1>
+                <p>Wiglaf Software - Slopes</p>
+                <p>Rowe Innovations, LLC - AI and Humanity</p>
+                <p>Rowe Innovations, LLC - AML memoir</p>
+                <p>OMT Studios - 3D printing</p>
+            </div>
+
+            <div class="giphy">
+                <div class="meme-preview" id="meme-preview"></div>
+                <div>
+                    <button class="meme-button" onclick="generateGiphy()">Generate a funny meme for James</button>
+                </div>
+                <div class="links" id="send-link">
+                    <a id="email-link" href="#">Send James the meme</a>
+                </div>
+        
+                <div class="powered-by-giphy">
+                    <a href="https://giphy.com/" target="_blank">
+                        <img src="./Poweredby_100px-White_VertLogo.png" alt="Powered by Giphy">
+                    </a>
+                </div>
+            </div>
         </div>
         <div class="links" id="send-link">
             <a id="email-link" href="#">Send James the meme</a>
         </div>
-
-        <div class="powered-by-giphy">
-            <a href="https://giphy.com/" target="_blank">
-                <img src="./Poweredby_100px-White_VertLogo.png" alt="Powered by Giphy">
-            </a>
-        </div>
-
-        <h2>Maybe I've written something recently</h2>
-
-        <h3><a href="https://github.com/jsr6720/">GitHub</a></h3>
-        <h3><a href="https://twitter.com/jrowe6720">Twitter</a></h3>
-        <h3><a href="https://jsrowe.com">James' Thoughts</a></h3>
-
-        <h2><a href="https://www.linkedin.com/in/jsr6720"><img src="./LI-Logo.png" alt="linkedin logo" /></a></h2>
-
-        <h6>Sadly, in the overlap of people named James with cancer who make websites I spotted another at <a href="https://www.isjamesalive.com">isjamesalive.com</a></h6>
-
-        <h6>Last updated: 2024-06-05 00:45:12 -0400</h6>
-    </div>
+    </main>
+    <footer>
+        <h6>Built by Wiglaf Software(TM) Last updated: 2024-06-20 17:54:37 -0400</h6>
+    </footer>
 
     <script>
         function generateGiphy() {
