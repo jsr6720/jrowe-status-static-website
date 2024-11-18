@@ -1,14 +1,12 @@
-# jsrowe-status-static-website
+# status.jsrowe.com
 
-James Rowe status website to convey a sense of permanence. If I'm not forever; maybe my Readme.
+Should've every human have a status page? This is mine to convey a sense of permanence. If I'm not forever; maybe my Readme is.
 
 # Not me James, but another.
 
-My page was originally a humor site to make fun of cancer, but now I'm using it somewhat tongue-in-cheek.
+When hunting for a domain I found out that `isjamesalive.com` was already registered. Toronto? Canada? `whois` as of 2024 points to `https://www.tucows.com`. So I shifted to this `status` page concept and built it as a subdomain off `jsrowe.com`.
 
-Maybe Toronto? Canada? `whois` -> https://www.tucows.com
-
-Hope you're doing well James.
+Hope you're still alive James of [https://www.isjamesalive.com](https://www.isjamesalive.com).
 
 ![https://www.isjamesalive.com](/isjamesalive-com-2024-06-02.png)
 
