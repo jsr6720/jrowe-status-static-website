@@ -5,7 +5,7 @@
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="James Rowe Status">
-    <meta property="og:description" content="A status page for the Human James Rowe of NY">
+    <meta property="og:description" content="Status page for the Human James Rowe of NY">
     <meta property="og:image" content="/heart.png">
     <meta property="og:url" content="https://status.jsrowe.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="right">
                     <h1>Is James Alive?</h1>
-                    <p>Yes, he is alive and running! <a href="https://www.lls.org">LLS 🎗️</a></p>
+                    <p>Yes, he is alive! <a href="https://www.lls.org">LLS 🎗️</a></p>
                 </div>
             </div>
 
@@ -37,69 +37,29 @@
                 </div>
                 <!-- todo integrate with my <p>Hearing Aids</p> -->
                 <!-- show my last played song on <p>Apple Music</p> -->
-            </div>
-
-            <div class="writings">
-                <h1>Read something I wrote</h1>
-                <p><a href="https://jsrowe.com">James' Thoughts</a></p>
-                <p><a href="https://twitter.com/jrowe6720">X/Twitter</a></p>
-                <p><a href="https://www.linkedin.com/in/jsr6720">LinkedIn</p>
-                <p><a href="https://github.com/jsr6720/">GitHub</a></p>
+                <p> <a href="https://www.strava.com/athletes/68595893">Strava</a></p>
             </div>
 
             <div class="projects">
-                <h1>Upcoming projects</h1>
-                <p>Wiglaf Software - Slopes</p>
-                <p>Rowe Innovations, LLC - AI and Humanity</p>
-                <p>Rowe Innovations, LLC - AML memoir</p>
-                <p>OMT Studios - 3D printing</p>
-            </div>
+                <h1>Read something I wrote</h1>
+                <p><a href="https://jsrowe.com">James' Thoughts</a></p>
+                <p><a href="https://www.linkedin.com/in/jsr6720">Find me on LinkedIn</p>
+                <p><a href="https://github.com/jsr6720/">My public repositories on GitHub</a></p>
 
-            <div class="giphy">
-                <div class="meme-preview" id="meme-preview"></div>
-                <div>
-                    <button class="meme-button" onclick="generateGiphy()">Generate a funny meme for James</button>
-                </div>
-                <div class="links" id="send-link">
-                    <a id="email-link" href="#">Send James the meme</a>
-                </div>
-        
-                <div class="powered-by-giphy">
-                    <a href="https://giphy.com/" target="_blank">
-                        <img src="./Poweredby_100px-White_VertLogo.png" alt="Powered by Giphy">
-                    </a>
-                </div>
+                <h1>Shipped Projects</h1>
+                <p>
+                    <a href="https://roweinnovations.com/">Rowe Innovations, LLC</a> - 
+                    <i><a href="https://www.amazon.com/Primer-Business-Leaders-Demystifying-Generative-ebook/dp/B0DKQSV5H4/">AI Primer For Business Leaders: Demystifying Generative AI</a></i>
+                </p>
+
+                <h1>Upcoming projects</h1>
+                <p>Wiglaf Software&trade; - Slopes</p>
+                <p>Rowe Innovations, LLC - AML memoir</p>
             </div>
-        </div>
-        <div class="links" id="send-link">
-            <a id="email-link" href="#">Send James the meme</a>
         </div>
     </main>
     <footer>
-        <h6>Built by Wiglaf Software(TM) Last updated: 2024-06-20 17:54:37 -0400</h6>
+        <h6>Built by Wiglaf Software&trade; Last updated: 2024-11-17 22:08:16 -0400</h6>
     </footer>
-
-    <script>
-        function generateGiphy() {
-            const giphyApiKey = 'pOJSXfC6lIikbXPV2XrLgawGki830uef'; // beta key - rate limited
-            const giphyApiUrl = `https://api.giphy.com/v1/gifs/random?tag=funny&api_key=${giphyApiKey}`;
-
-            fetch(giphyApiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    const gifUrl = data.data.bitly_gif_url;
-                    const previewGif = data.data.images.fixed_height_small.url;
-                    const emailBody = encodeURIComponent(`${gifUrl}`);
-
-                    document.getElementById('send-link').style.display = 'block';
-                    document.getElementById('meme-preview').innerHTML = `<img src="${previewGif}" alt="Random Meme Preview">`;
-                    document.getElementById('email-link').href = `mailto:5853136207@vzwpix.com?subject=A%20Funny%20Meme&body=${emailBody}`;
-                })
-                .catch(error => {
-                    document.getElementById('meme-preview').innerHTML = '<h4>Giphy error</h4>';
-                    console.error("Error fetching GIF from Giphy:", error);
-                });
-        }
-    </script>
 </body>
 </html>
