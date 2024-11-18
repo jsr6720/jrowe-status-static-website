@@ -1,7 +1,7 @@
 body {
     font-family: 'Helvetica', sans-serif;
     background-color: #f0f1ff;
-    color: #2f4f4f;
+    color: #4f2f2f;
 }
 
 .container {
@@ -57,9 +57,9 @@ p {
 }
 
 .status-bar .fill {
-    width: 60%; /* Adjust this percentage to reflect the fill level */
+    width: 100%; /* Adjust this percentage to reflect the fill level */
     height: 100%;
-    background-color: #4caf50; /* Change this color to customize the fill color */
+    background-color: black; /* Change this color to customize the fill color */
 }
 
 .meme-button {

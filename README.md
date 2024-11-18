@@ -17,3 +17,5 @@ LinkedIn logo and Gify logo from their respective brand sites
 Orange ribbon awareness from Leukemia society
 
 heart.png ChatGPT-4o
+
+grim-reaper.png -> `DALL·E 2024-05-22 12.49.30 - A simple 3x3 inch tattoo design of the Grim Reaper holding a scythe and a generic loading icon. The design should be minimalist, with clean lines and .webp` ChatGPT Generated image.
