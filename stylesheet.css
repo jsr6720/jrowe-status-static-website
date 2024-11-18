@@ -1,0 +1,96 @@
+body {
+    font-family: 'Helvetica', sans-serif;
+    background-color: #f0f1ff;
+    color: #4f2f2f;
+}
+
+.container {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #4682b4;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+.heartbeat-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-direction: row;
+}
+
+.heartbeat img {
+    margin-right: 1rem;
+}
+
+.heartbeat .text {
+    display: flex;
+    flex-direction: column;
+}
+
+.heartbeat .text h1 {
+    margin-bottom: 0.5rem;
+}
+
+.status-bars {
+    border: solid thick #ECECF1;
+    padding: 15px;
+    min-width: 600px;
+}
+
+.status-bar {
+    width: 200px;
+    height: 25px;
+    background-color: #e0e0e0;
+    border-radius: 12.5px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.status-bar .fill {
+    width: 100%; /* Adjust this percentage to reflect the fill level */
+    height: 100%;
+    background-color: black; /* Change this color to customize the fill color */
+}
+
+.meme-button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.meme-button:hover {
+    background-color: #ff1493;
+}
+
+.links {
+    display: none;
+    margin-top: 20px;
+}
+
+.links a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #4682b4;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+}

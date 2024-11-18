@@ -2,123 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Is James Alive?</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background-color: #f0f8ff;
-            color: #2f4f4f;
-        }
-
-        .container {
-            margin-top: 50px;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            color: #4682b4;
-        }
-
-        p {
-            font-size: 1.5em;
-        }
-
-        .alive {
-            color: #32cd32;
-            font-weight: bold;
-        }
-
-        .emojii {
-            font-size: 4em;
-        }
-
-        .meme-button {
-            background-color: #ff69b4;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1em;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        .meme-button:hover {
-            background-color: #ff1493;
-        }
-
-        .links {
-            display: none;
-            margin-top: 20px;
-        }
-
-        .links a {
-            display: inline-block;
-            margin: 0 10px;
-            text-decoration: none;
-            color: white;
-            background-color: #4682b4;
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
-
-        .links a:hover {
-            background-color: #2f4f4f;
-        }
-
-        .meme-preview {
-            margin-top: 20px;
-        }
-
-        .powered-by-giphy {
-            margin-top: 20px;
-        }
-    </style>
+    <meta property="og:title" content="James Rowe Status">
+    <meta property="og:description" content="Status page for the Human James Rowe of NY">
+    <meta property="og:image" content="/heart.png">
+    <meta property="og:url" content="https://status.jsrowe.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Rowe Status</title>
+    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
-        <h1>Is James Alive?</h1>
-        <p class="alive">No, he is not... 😞</p>
-        <div class="emojii">💀</div>
+    <header class="header">
+        <nav class="nav">
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="heartbeat-title">
+                <div class="left">
+                    <p><img src="heart.png"></p>
+                </div>
+                <div class="right">
+                    <h1>Is James Alive?</h1>
+                    <p class="alive">No, he is not... 😞</p>
+                    <div class="emojii">💀</div>
+                </div>
+            </div>
 
-        <button class="meme-button" onclick="generateGiphy()">Generate a sad meme for James' friend Tony</button>
+            <div class="status-bars">
+                <p>Life</p>
+                <div class="status-bar">
+                    <div class="fill"></div>
+                </div>
+                <p><img src="grim-reaper.png"></p>
+                <!-- todo integrate with my <p>Hearing Aids</p> -->
+                <!-- show my last played song on <p>Apple Music</p> -->
+                <p> <a href="https://www.strava.com/athletes/68595893">Strava</a></p>
+            </div>
 
-        <div class="meme-preview" id="meme-preview"></div>
-        <div class="links" id="send-link">
-            <a id="email-link" href="#">Send Tony the meme</a>
+            <div class="projects">
+                <h1>Read something I wrote</h1>
+                <p><a href="https://jsrowe.com">James' Thoughts</a></p>
+                <p><a href="https://www.linkedin.com/in/jsr6720">Find me on LinkedIn</p>
+                <p><a href="https://github.com/jsr6720/">My public repositories on GitHub</a></p>
+
+                <h1>Shipped Projects</h1>
+                <p>
+                    <a href="https://roweinnovations.com/">Rowe Innovations, LLC</a> - 
+                    <i><a href="https://www.amazon.com/Primer-Business-Leaders-Demystifying-Generative-ebook/dp/B0DKQSV5H4/">AI Primer For Business Leaders: Demystifying Generative AI</a></i>
+                </p>
+
+                <h1>Upcoming projects</h1>
+                <p>Wiglaf Software&trade; - Slopes</p>
+                <p>Rowe Innovations, LLC - AML memoir</p>
+            </div>
         </div>
-
-        <div class="powered-by-giphy">
-            <a href="https://giphy.com/" target="_blank">
-                <img src="./Poweredby_100px-White_VertLogo.png" alt="Powered by Giphy">
-            </a>
-        </div>
-
-        <h6>Sadly in the venn diagram of people named James with cancer who make websites I have a friend at <a href="https://www.isjamesalive.com">isjamesalive.com</a></h6>
-    </div>
-
-    <script>
-        function generateGiphy() {
-            const giphyApiKey = 'pOJSXfC6lIikbXPV2XrLgawGki830uef'; // beta key - rate limited
-            const giphyApiUrl = `https://api.giphy.com/v1/gifs/random?tag=sad&api_key=${giphyApiKey}`;
-
-            fetch(giphyApiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    const gifUrl = data.data.bitly_gif_url;
-                    const previewGif = data.data.images.fixed_height_small.url;
-                    const emailBody = encodeURIComponent(`${gifUrl}`);
-
-                    document.getElementById('send-link').style.display = 'block';
-                    document.getElementById('meme-preview').innerHTML = `<img src="${previewGif}" alt="Random Meme Preview">`;
-                    document.getElementById('email-link').href = `mailto:Knopp.anthony@gmail.com?subject=Sorry%20bro&body=${emailBody}`;
-                })
-                .catch(error => {
-                    document.getElementById('meme-preview').innerHTML = '<h4>Giphy error</h4>';
-                    console.error("Error fetching GIF from Giphy:", error);
-                });
-        }
-    </script>
+    </main>
+    <footer>
+        <h6>Built by Wiglaf Software&trade; Last updated: 2024-11-17 22:08:16 -0400</h6>
+    </footer>
 </body>
 </html>
